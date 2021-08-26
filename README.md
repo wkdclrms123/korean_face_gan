@@ -1,5 +1,5 @@
 # Korean Face Gan (Korean Face Style Transfer by StyleGanv2-ADA)
-### App Name : GAN NAM STYLE  
+### App Name : GAN NAM STYLE
 ### Team Leader : 황동준
 ### Team Member : 나종석, 장치근, 조영진, 한예지
 
