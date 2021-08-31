@@ -1,3 +1,4 @@
 .idea
-images
+images/
+images_face_only/
 venv/
