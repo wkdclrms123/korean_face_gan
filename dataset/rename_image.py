@@ -1,4 +1,3 @@
-#fix github page
 import os
 
 path = "./images_face_only/"
