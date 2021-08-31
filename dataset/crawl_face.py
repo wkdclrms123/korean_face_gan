@@ -17,19 +17,21 @@ def urlopen_custom(req_custom):
 
 
 BASE_URL = "https://namu.wiki"
-req = Request(BASE_URL+"/w/%EB%B0%B0%EC%9A%B0/%ED%95%9C%EA%B5%AD", headers={'User-Agent': 'Mozilla/5.0'})
+req = Request(BASE_URL+"/w/%EB%B6%84%EB%A5%98:%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%9D%98%20%EA%B1%B8%EA%B7%B8%EB%A3%B9", headers={'User-Agent': 'Mozilla/5.0'})
 html = urlopen_custom(req)
 bsObject = bs(html, "html.parser")
 
-links = bsObject.find_all("a", {"class": "wiki-link-internal"})
+links = bsObject.find_all("div", {"class": "c"})
 print(len(links))
 img_count = 0
 
 
 
 for link in links:
+    """
     if link.get("title") == "배우" or link.get("class") == ["wiki-link-internal", "not-exist"]:
         continue
+    """
     req = Request(BASE_URL+link.get("href"), headers={'User-Agent': 'Mozilla/5.0'})
     html = urlopen_custom(req)
 
@@ -41,7 +43,7 @@ for link in links:
         req = Request("https:"+img_link, headers={'User-Agent': 'Mozilla/5.0'})
 
         with urlopen_custom(req) as f:
-            with open('./images/'+str(img_count)+'.jpg', 'wb') as h:
+            with open('./images_idol/'+str(img_count)+'.jpg', 'wb') as h:
                 img = f.read()
                 h.write(img)
         img_count += 1

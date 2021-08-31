@@ -7,7 +7,11 @@ from PIL import Image
 
 face_detector = RetinaFace.build_model()
 
-path = "./images/"
+path_input = "./"+input("입력할 폴더 : ")+"/"
+path_output = "./"+input("출력할 폴더 : ")+"/"
+pixel_control = int(input("몇 픽셀까지 허용? (ex 100) : "))
+
+path = path_input
 files = os.listdir(path)
 img_count = 0
 
@@ -36,7 +40,7 @@ for file in files:
 
                 # 저화질 이미지는 삭제 (양질의 이미지 획득 조절 가능)
                 print(facial_area)
-                if h < 100 or w < 100:
+                if h < pixel_control or w < pixel_control:
                     print("skip")
                     continue
 
@@ -67,12 +71,13 @@ for file in files:
                 #detected_face = np.resize(detected_face, (540, 540))
                 #cv2.imwrite('./images_face_only/'+str(img_count)+'.jpg', detected_face)
                 Image.fromarray(detected_face)\
-                    .resize((256, 256), Image.NEAREST)\
-                    .save('./images_face_only/'+str(img_count)+'.jpg')
+                    .resize((256, 256), Image.LANCZOS)\
+                    .save(path_output+str(img_count)+'.jpg')
                 img_count += 1
             except:
                 print("no detected face")
 
+    """
     if img_count == 8:
         break
-
+    """
