@@ -19,5 +19,5 @@ from gangnamstyle.views import Gangnam_Style
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('gangnamstyle/',  Gangnam_Style.as_view()),
+    path('post/',  Gangnam_Style.as_view()),
 ]
