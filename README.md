@@ -2,7 +2,8 @@
 ### App Name : GAN NAM STYLE
 ### Team Leader : 황동준
 ### Team Member : 나종석, 장치근, 조영진, 한예지
-
+## Explain Video
+[![GAN_NAM_STYLE](https://img.youtube.com/vi/T2SHBQKI5gM/0.jpg)](https://www.youtube.com/watch?v=T2SHBQKI5gM)
 ## Dataset
 이 폴더는 훈련에 필요한 데이터셋을 모으기 위해 만든 코드,  
 그리고 훈련에 필요한 데이터셋이 들어가 있음
